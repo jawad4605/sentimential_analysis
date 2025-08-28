@@ -208,11 +208,11 @@ def separate_by_sender(messages):
     """
     Splits messages into two sets based on sender name.
     """
-    parent_a_msgs = []  # e.g., messages from Barbara
-    parent_b_msgs = []  # e.g., messages from Shola
+    parent_a_msgs = []  # e.g., messages from lili
+    parent_b_msgs = []  # e.g., messages from jon
     for msg in messages:
         sender_name = msg["Sender"].lower()
-        if "barbara" in sender_name:
+        if "lili" in sender_name:
             parent_a_msgs.append(msg)
         else:
             parent_b_msgs.append(msg)
@@ -491,9 +491,9 @@ def run_dashboard():
     df_b = pd.DataFrame(parent_b_msgs)
     
     st.markdown("## Sender-Specific Data")
-    st.write("Messages from **Barbara Anjola**:")
+    st.write("Messages from **lili Anjola**:")
     st.dataframe(df_a)
-    st.write("Messages from **Shola Anjola**:")
+    st.write("Messages from **jon Anjola**:")
     st.dataframe(df_b)
     
     # Step 5: Visualizations
